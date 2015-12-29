@@ -1,0 +1,349 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		020120011C2A6B300091FD9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020120001C2A6B300091FD9B /* AppDelegate.swift */; };
+		020120031C2A6B300091FD9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020120021C2A6B300091FD9B /* ViewController.swift */; };
+		020120081C2A6B300091FD9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 020120071C2A6B300091FD9B /* Assets.xcassets */; };
+		0201200B1C2A6B300091FD9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 020120091C2A6B300091FD9B /* LaunchScreen.storyboard */; };
+		020120131C2A6BE50091FD9B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020120121C2A6BE50091FD9B /* MapViewController.swift */; };
+		020120181C2A95CB0091FD9B /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020120171C2A95CB0091FD9B /* UdacityClient.swift */; };
+		0201201A1C2A96D80091FD9B /* UdacityConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020120191C2A96D80091FD9B /* UdacityConstants.swift */; };
+		0201201E1C2ACA440091FD9B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0201201D1C2ACA440091FD9B /* LoginController.swift */; };
+		020120201C2B026A0091FD9B /* UdacityConvinience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0201201F1C2B026A0091FD9B /* UdacityConvinience.swift */; };
+		0216ECE91C32839C00216B93 /* AddStudentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0216ECE81C32839C00216B93 /* AddStudentLocationViewController.swift */; };
+		02D0CEC91C322645008989C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D0CEC71C322645008989C5 /* Main.storyboard */; };
+		02D0CECB1C322813008989C5 /* InputLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D0CECA1C322813008989C5 /* InputLocation.swift */; };
+		02FD9F431C2E6C4B00090DA0 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FD9F421C2E6C4B00090DA0 /* TableViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		02011FFD1C2A6B300091FD9B /* onthemap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = onthemap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		020120001C2A6B300091FD9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		020120021C2A6B300091FD9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		020120071C2A6B300091FD9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0201200A1C2A6B300091FD9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0201200C1C2A6B300091FD9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		020120121C2A6BE50091FD9B /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		020120171C2A95CB0091FD9B /* UdacityClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
+		020120191C2A96D80091FD9B /* UdacityConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityConstants.swift; sourceTree = "<group>"; };
+		0201201D1C2ACA440091FD9B /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		0201201F1C2B026A0091FD9B /* UdacityConvinience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityConvinience.swift; sourceTree = "<group>"; };
+		0216ECE81C32839C00216B93 /* AddStudentLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStudentLocationViewController.swift; sourceTree = "<group>"; };
+		02D0CEC81C322645008989C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = onthemap/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		02D0CECA1C322813008989C5 /* InputLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputLocation.swift; sourceTree = "<group>"; };
+		02FD9F421C2E6C4B00090DA0 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		02011FFA1C2A6B300091FD9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02011FF41C2A6B300091FD9B = {
+			isa = PBXGroup;
+			children = (
+				02011FFF1C2A6B300091FD9B /* onthemap */,
+				02011FFE1C2A6B300091FD9B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		02011FFE1C2A6B300091FD9B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				02011FFD1C2A6B300091FD9B /* onthemap.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		02011FFF1C2A6B300091FD9B /* onthemap */ = {
+			isa = PBXGroup;
+			children = (
+				020120161C2A95630091FD9B /* Controller */,
+				020120151C2A955A0091FD9B /* View */,
+				020120141C2A95530091FD9B /* Model */,
+				020120001C2A6B300091FD9B /* AppDelegate.swift */,
+				0201200C1C2A6B300091FD9B /* Info.plist */,
+			);
+			path = onthemap;
+			sourceTree = "<group>";
+		};
+		020120141C2A95530091FD9B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				020120171C2A95CB0091FD9B /* UdacityClient.swift */,
+				020120191C2A96D80091FD9B /* UdacityConstants.swift */,
+				0201201F1C2B026A0091FD9B /* UdacityConvinience.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		020120151C2A955A0091FD9B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				020120091C2A6B300091FD9B /* LaunchScreen.storyboard */,
+				020120071C2A6B300091FD9B /* Assets.xcassets */,
+				02D0CEC71C322645008989C5 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		020120161C2A95630091FD9B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				020120021C2A6B300091FD9B /* ViewController.swift */,
+				020120121C2A6BE50091FD9B /* MapViewController.swift */,
+				0201201D1C2ACA440091FD9B /* LoginController.swift */,
+				02FD9F421C2E6C4B00090DA0 /* TableViewController.swift */,
+				02D0CECA1C322813008989C5 /* InputLocation.swift */,
+				0216ECE81C32839C00216B93 /* AddStudentLocationViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		02011FFC1C2A6B300091FD9B /* onthemap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0201200F1C2A6B300091FD9B /* Build configuration list for PBXNativeTarget "onthemap" */;
+			buildPhases = (
+				02011FF91C2A6B300091FD9B /* Sources */,
+				02011FFA1C2A6B300091FD9B /* Frameworks */,
+				02011FFB1C2A6B300091FD9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = onthemap;
+			productName = onthemap;
+			productReference = 02011FFD1C2A6B300091FD9B /* onthemap.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		02011FF51C2A6B300091FD9B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = kodeguide;
+				TargetAttributes = {
+					02011FFC1C2A6B300091FD9B = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = 02011FF81C2A6B300091FD9B /* Build configuration list for PBXProject "onthemap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 02011FF41C2A6B300091FD9B;
+			productRefGroup = 02011FFE1C2A6B300091FD9B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				02011FFC1C2A6B300091FD9B /* onthemap */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		02011FFB1C2A6B300091FD9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02D0CEC91C322645008989C5 /* Main.storyboard in Resources */,
+				0201200B1C2A6B300091FD9B /* LaunchScreen.storyboard in Resources */,
+				020120081C2A6B300091FD9B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		02011FF91C2A6B300091FD9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				020120201C2B026A0091FD9B /* UdacityConvinience.swift in Sources */,
+				020120181C2A95CB0091FD9B /* UdacityClient.swift in Sources */,
+				0201201E1C2ACA440091FD9B /* LoginController.swift in Sources */,
+				02FD9F431C2E6C4B00090DA0 /* TableViewController.swift in Sources */,
+				0201201A1C2A96D80091FD9B /* UdacityConstants.swift in Sources */,
+				0216ECE91C32839C00216B93 /* AddStudentLocationViewController.swift in Sources */,
+				02D0CECB1C322813008989C5 /* InputLocation.swift in Sources */,
+				020120031C2A6B300091FD9B /* ViewController.swift in Sources */,
+				020120131C2A6BE50091FD9B /* MapViewController.swift in Sources */,
+				020120011C2A6B300091FD9B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		020120091C2A6B300091FD9B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0201200A1C2A6B300091FD9B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		02D0CEC71C322645008989C5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02D0CEC81C322645008989C5 /* Base */,
+			);
+			name = Main.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0201200D1C2A6B300091FD9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0201200E1C2A6B300091FD9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		020120101C2A6B300091FD9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = onthemap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kodeguide.onthemap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		020120111C2A6B300091FD9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = onthemap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kodeguide.onthemap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		02011FF81C2A6B300091FD9B /* Build configuration list for PBXProject "onthemap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0201200D1C2A6B300091FD9B /* Debug */,
+				0201200E1C2A6B300091FD9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0201200F1C2A6B300091FD9B /* Build configuration list for PBXNativeTarget "onthemap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				020120101C2A6B300091FD9B /* Debug */,
+				020120111C2A6B300091FD9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 02011FF51C2A6B300091FD9B /* Project object */;
+}

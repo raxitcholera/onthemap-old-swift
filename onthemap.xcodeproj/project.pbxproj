@@ -20,6 +20,8 @@
 		02D0CEC91C322645008989C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D0CEC71C322645008989C5 /* Main.storyboard */; };
 		02D0CECB1C322813008989C5 /* InputLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D0CECA1C322813008989C5 /* InputLocation.swift */; };
 		02FD9F431C2E6C4B00090DA0 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FD9F421C2E6C4B00090DA0 /* TableViewController.swift */; };
+		782C046E1C68AE90001676F6 /* StudentClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782C046D1C68AE90001676F6 /* StudentClass.swift */; };
+		78EBD0491C96C25800278095 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EBD0481C96C25800278095 /* GCDBlackBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		02D0CEC81C322645008989C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = onthemap/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		02D0CECA1C322813008989C5 /* InputLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputLocation.swift; sourceTree = "<group>"; };
 		02FD9F421C2E6C4B00090DA0 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		782C046D1C68AE90001676F6 /* StudentClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentClass.swift; sourceTree = "<group>"; };
+		78EBD0481C96C25800278095 /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 				020120151C2A955A0091FD9B /* View */,
 				020120141C2A95530091FD9B /* Model */,
 				020120001C2A6B300091FD9B /* AppDelegate.swift */,
+				78EBD0481C96C25800278095 /* GCDBlackBox.swift */,
 				0201200C1C2A6B300091FD9B /* Info.plist */,
 			);
 			path = onthemap;
@@ -85,6 +90,7 @@
 				020120171C2A95CB0091FD9B /* UdacityClient.swift */,
 				020120191C2A96D80091FD9B /* UdacityConstants.swift */,
 				0201201F1C2B026A0091FD9B /* UdacityConvinience.swift */,
+				782C046D1C68AE90001676F6 /* StudentClass.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -187,11 +193,13 @@
 				020120181C2A95CB0091FD9B /* UdacityClient.swift in Sources */,
 				0201201E1C2ACA440091FD9B /* LoginController.swift in Sources */,
 				02FD9F431C2E6C4B00090DA0 /* TableViewController.swift in Sources */,
+				78EBD0491C96C25800278095 /* GCDBlackBox.swift in Sources */,
 				0201201A1C2A96D80091FD9B /* UdacityConstants.swift in Sources */,
 				0216ECE91C32839C00216B93 /* AddStudentLocationViewController.swift in Sources */,
 				02D0CECB1C322813008989C5 /* InputLocation.swift in Sources */,
 				020120031C2A6B300091FD9B /* ViewController.swift in Sources */,
 				020120131C2A6BE50091FD9B /* MapViewController.swift in Sources */,
+				782C046E1C68AE90001676F6 /* StudentClass.swift in Sources */,
 				020120011C2A6B300091FD9B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

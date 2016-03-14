@@ -12,9 +12,15 @@ import MapKit
 class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    
+    var students: [StudentObject] {
+        return (UIApplication.sharedApplication().delegate as! AppDelegate).StudentObj
+    }
+    
     override func viewDidLoad() {
     super.viewDidLoad()
         title = " On The Map "
+        mapView.delegate = self;
         
     }
         
@@ -68,6 +74,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         print(view)
     }
     
+    
     func loadData() {
         
         var locations1 = AnyObject!()
@@ -103,11 +110,19 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                     annotation.subtitle = mediaURL
                     
                     // Finally we place the annotation in an array of annotations.
+                    
                     annotations.append(annotation)
+                    
+                    
+                    
+                    
                 }
                 
                 // When the array is complete, we add the annotations to the map.
-                self.mapView.addAnnotations(annotations)
+                performUIUpdatesOnMain({ () -> Void in
+                    self.mapView.addAnnotations(annotations)
+                })
+                
             }
             else {
                 locations1 = self.hardCodedLocationData()

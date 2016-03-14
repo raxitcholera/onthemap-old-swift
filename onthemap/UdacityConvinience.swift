@@ -33,6 +33,8 @@ extension UdacityClient {
         let jsonBody = ["udacity" :internalDict]
         
         taskForPOSTMethod(Methods.UdacitySession, base: "Udacity", parameters: parameters, jsonBody: jsonBody) { (result, error) -> Void in
+            
+            
             if error != nil { // Handle error…
                 completionHandler(success: false, errorString: error)
             } else {
@@ -106,7 +108,7 @@ extension UdacityClient {
             if error != nil { // Handle error…
                 completionHandler(success: false, list: nil, errorString: error)
             } else {
-                print("The result is \(result)")
+//                print("The result is \(result)")
                 let list1 = result
                 completionHandler(success: true, list: list1, errorString: nil)
             }

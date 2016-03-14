@@ -18,8 +18,9 @@ class UdacityClient: NSObject {
         session = NSURLSession.sharedSession()
         super.init()
     }
-        
-    func taskForGETMethod(method: String, base: String, parameters: [String : AnyObject], completionHandler: (result: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
+    
+    
+    func taskForGETMethod(method: String, base: String, parameters: [String : AnyObject], completionHandlerForGET: (result: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
         
         var urlString: String;
         if base == "Udacity" {
@@ -33,10 +34,18 @@ class UdacityClient: NSObject {
         request.addValue("QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY", forHTTPHeaderField: "X-Parse-REST-API-Key")
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
             
+            
+            func sendError(error: String) {
+                print(error)
+                let userInfo = [NSLocalizedDescriptionKey : error]
+                completionHandlerForGET(result: nil, error: NSError(domain: "taskForGETMethod", code: 1, userInfo: userInfo))
+            }
+            
             guard (error == nil) else {
-                print("There was an error with your request: \(error)")
+                sendError("There was an error with your request: \(error)")
                 return
             }
+            
             
             guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode where statusCode >= 200 && statusCode <= 299 else {
                 if let response = response as? NSHTTPURLResponse {
@@ -54,14 +63,14 @@ class UdacityClient: NSObject {
                 return
             }
             
-            UdacityClient.parseJSONWithCompletionHandler(data, completionHandler: completionHandler)
+            UdacityClient.parseJSONWithCompletionHandler(data, completionHandler: completionHandlerForGET)
         }
         
         task.resume()
         
         return task
     }
-    func taskForPOSTMethod(method: String, base: String, parameters: [String : AnyObject], jsonBody:AnyObject!, completionHandler: (result: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
+    func taskForPOSTMethod(method: String, base: String, parameters: [String : AnyObject], jsonBody:AnyObject!, completionHandlerForPOST: (result: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
         
         var urlString: String;
         if base == "Udacity" {
@@ -83,8 +92,14 @@ class UdacityClient: NSObject {
         
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
             
+            func sendError(error: String) {
+                print(error)
+                let userInfo = [NSLocalizedDescriptionKey : error]
+                completionHandlerForPOST(result: nil, error: NSError(domain: "taskForPOSTMethod", code: 1, userInfo: userInfo))
+            }
+            
             guard (error == nil) else {
-                print("There was an error with your request: \(error)")
+                sendError("There was an error with your request: \(error)")
                 return
             }
             
@@ -96,6 +111,7 @@ class UdacityClient: NSObject {
                 } else {
                     print("Your request returned an invalid response!")
                 }
+                sendError("Login Failed")
                 return
             }
             
@@ -104,7 +120,7 @@ class UdacityClient: NSObject {
                 return
             }
             
-            UdacityClient.parseJSONWithCompletionHandler(data, completionHandler: completionHandler)
+            UdacityClient.parseJSONWithCompletionHandler(data, completionHandler: completionHandlerForPOST)
         }
         
         task.resume()
@@ -188,8 +204,6 @@ class UdacityClient: NSObject {
     }
     
     class func parseJSONWithCompletionHandler(data: NSData, completionHandler: (result: AnyObject!, error: NSError?) -> Void) {
-        
-        
         
         var parsedResult: AnyObject!
         do {

@@ -23,7 +23,7 @@ class TableViewController:UITableViewController {
         UdacityClient.sharedInstance().getAllStudentLocations(){ (success, locationsresponse,errorString) in
             if success {
                 locations1 = locationsresponse! as! [String:AnyObject]
-                self.locations = locations1["results"] as! [[String:AnyObject]]
+                self.locations = locations1["results"] as? [[String:AnyObject]]
                 dispatch_async(dispatch_get_main_queue()) {
                     self.tableView.reloadData()
                 }
@@ -59,6 +59,10 @@ class TableViewController:UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("selected indes %d", indexPath.row)
+        let app = UIApplication.sharedApplication()
+        if let toOpen = locations![indexPath.row]["mediaURL"] as? String {
+            app.openURL(NSURL(string: toOpen)!)
+        }
     }
     
     @IBAction func logout(sender: AnyObject) {

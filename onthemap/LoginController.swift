@@ -40,7 +40,14 @@ class LoginController: UIViewController {
             if success {
                 self.completeLogin()
             } else {
-                self.displayError(errorString?.localizedDescription)
+                performUIUpdatesOnMain({ () -> Void in
+                    let alertController = UIAlertController(title: nil, message: "Login Failed", preferredStyle: UIAlertControllerStyle.Alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    alertController.addAction(defaultAction)
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                    self.displayError(errorString?.localizedDescription)
+                })
+                
             }
         }
         }else {

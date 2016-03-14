@@ -19,6 +19,14 @@ extension UdacityClient {
         static let BaseURLSecure : String = "https://api.parse.com/1/"        
         static let UdacityBaseURLSecure :String = "https://www.udacity.com/api/"
         
+        static let ApiScheme = "http"
+        static let ApiSchemeSecure = "https"
+        static let ApiHostParse = "api.parse.com"
+        static let ApiPathParse = "/1"
+        static let ApiHostUdacity = "udacity.ord"
+        static let ApiPathUdacity = "/api"
+//        static let AuthorizationURL : String = "https://www.themoviedb.org/authenticate/"
+        
     }
 
     struct Methods {
@@ -29,5 +37,11 @@ extension UdacityClient {
         
     }
     
+    struct ParameterKeys {
+        static let ApiKey = "api_key"
+        static let SessionID = "session_id"
+        static let RequestToken = "request_token"
+        static let Query = "query"
+    }
     
 }

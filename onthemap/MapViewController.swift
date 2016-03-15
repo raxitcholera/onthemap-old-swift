@@ -30,7 +30,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         UdacityClient.sharedInstance().performLogout { (success, errorString) -> Void in
             
             let controller = self.storyboard!.instantiateViewControllerWithIdentifier("LoginController")
-            
             if success {
                 UIApplication.sharedApplication().keyWindow?.rootViewController = controller
             }
@@ -66,7 +65,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         if control == view.rightCalloutAccessoryView {
             let app = UIApplication.sharedApplication()
             if let toOpen = view.annotation?.subtitle! {
-                app.openURL(NSURL(string: toOpen)!)
+                if app.canOpenURL(NSURL(string: toOpen)!){
+                    app.openURL(NSURL(string: toOpen)!)
+                }
             }
         }
     }
@@ -81,7 +82,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         UdacityClient.sharedInstance().getAllStudentLocations(){ (success, locationsresponse,errorString) in
             if success {
                 locations1 = locationsresponse! as! [String:AnyObject]
-                
                 
                 //        let locations = self.hardCodedLocationData()
                 let locations = locations1["results"] as! [[String:AnyObject]]
@@ -112,10 +112,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                     // Finally we place the annotation in an array of annotations.
                     
                     annotations.append(annotation)
-                    
-                    
-                    
-                    
                 }
                 
                 // When the array is complete, we add the annotations to the map.

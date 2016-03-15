@@ -222,6 +222,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelBtn" destination="U6N-GC-iYd" id="kp1-el-l1W"/>
                         <outlet property="mapView" destination="gcv-aO-pEF" id="WjU-Wx-bUg"/>
                         <outlet property="mediaURL" destination="bTm-Sp-ILf" id="PGe-ck-6fs"/>
                     </connections>
@@ -296,7 +297,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="RaxCho99" borderStyle="roundedRect" placeholder="Enter Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pSD-5b-6A2">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pSD-5b-6A2">
                                 <rect key="frame" x="20" y="148" width="560" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -436,6 +437,6 @@
         <image name="listView" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bbh-l9-23r"/>
+        <segue reference="lsq-uA-P4u"/>
     </inferredMetricsTieBreakers>
 </document>

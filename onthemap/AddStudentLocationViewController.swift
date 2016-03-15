@@ -15,6 +15,7 @@ class AddStudentLocationViewController: UIViewController {
     
     @IBOutlet weak var mediaURL: UITextView!
     
+    @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     
     var searchString:String?
@@ -64,6 +65,7 @@ class AddStudentLocationViewController: UIViewController {
             
             let pinAnnotationView = MKPinAnnotationView(annotation: pointAnnotation, reuseIdentifier: nil)
             self.mapView.centerCoordinate = pointAnnotation.coordinate
+            self.mapView.setRegion(MKCoordinateRegionMakeWithDistance(pointAnnotation.coordinate, 2000, 2000), animated: true)
             self.mapView.addAnnotation(pinAnnotationView.annotation!)
         }
     }
@@ -76,6 +78,11 @@ class AddStudentLocationViewController: UIViewController {
         let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         
         UdacityClient.sharedInstance().setPinFor(appDel.UserId!, first_name:appDel.firstName!, last_name:appDel.lastName!, mapString:searchString!, lat:self.lat!, long:self.long!, url:self.mediaURL.text!) { (sucess,error) in
+             print("Location Added Successfully")
+            let alert = UIAlertController(title: "Alert", message: "Location Added Successfully", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            
             
             }
         } else {
@@ -85,5 +92,8 @@ class AddStudentLocationViewController: UIViewController {
         }
         
         
+    }
+    @IBAction func dismissThisView() {
+        [self.cancelBtn .sendActionsForControlEvents(UIControlEvents.TouchUpInside)]
     }
 }

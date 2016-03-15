@@ -61,7 +61,9 @@ class TableViewController:UITableViewController {
         print("selected indes %d", indexPath.row)
         let app = UIApplication.sharedApplication()
         if let toOpen = locations![indexPath.row]["mediaURL"] as? String {
-            app.openURL(NSURL(string: toOpen)!)
+            if app.canOpenURL(NSURL(string: toOpen)!){
+                app.openURL(NSURL(string: toOpen)!)
+            }
         }
     }
     

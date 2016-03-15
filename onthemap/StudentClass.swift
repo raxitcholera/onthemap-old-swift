@@ -12,10 +12,14 @@ import UIKit
 struct StudentObject {
     var first_name:String?
     var last_name:String?
+    var URLlink:String?
     var lat:Double?
     var long:Double?
     init(dict: Dictionary<String, AnyObject>) {
         self.first_name = dict["first_name"] as? String
         self.last_name = dict["last_name"] as? String
+        self.lat = dict["lat"] as? Double
+        self.long = dict["long"] as? Double
+        self.URLlink = dict["url"] as? String
     }
 }

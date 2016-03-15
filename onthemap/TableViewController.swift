@@ -24,13 +24,20 @@ class TableViewController:UITableViewController {
             if success {
                 locations1 = locationsresponse! as! [String:AnyObject]
                 self.locations = locations1["results"] as? [[String:AnyObject]]
+                
                 dispatch_async(dispatch_get_main_queue()) {
                     self.tableView.reloadData()
                 }
                 
             }
             else {
-                    self.locations = self.hardCodedLocationData()
+                let alertController = UIAlertController(title: nil, message: "Student info Loading Failed", preferredStyle: UIAlertControllerStyle.Alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(defaultAction)
+                self.presentViewController(alertController, animated: true, completion: nil)
+
+                
+                self.locations = self.hardCodedLocationData()
             }
         }
         
@@ -80,6 +87,7 @@ class TableViewController:UITableViewController {
         }
         
     }
+
     
     func hardCodedLocationData() -> [[String : AnyObject]] {
         return  [

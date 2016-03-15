@@ -37,7 +37,7 @@ class LoginController: UIViewController {
                 self.completeLogin()
             } else {
                 performUIUpdatesOnMain({ () -> Void in
-                    let alertController = UIAlertController(title: nil, message: "Login Failed", preferredStyle: UIAlertControllerStyle.Alert)
+                    let alertController = UIAlertController(title: "Login Failed", message: errorString?.localizedDescription , preferredStyle: UIAlertControllerStyle.Alert)
                     let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
                     alertController.addAction(defaultAction)
                     self.presentViewController(alertController, animated: true, completion: nil)

@@ -79,14 +79,14 @@ class AddStudentLocationViewController: UIViewController {
         
         UdacityClient.sharedInstance().setPinFor(appDel.UserId!, first_name:appDel.firstName!, last_name:appDel.lastName!, mapString:searchString!, lat:self.lat!, long:self.long!, url:self.mediaURL.text!) { (sucess,error) in
              print("Location Added Successfully")
-            let alert = UIAlertController(title: "Alert", message: "Location Added Successfully", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+//            let alert = UIAlertController(title: "Alert", message: "Location Added Successfully", preferredStyle: UIAlertControllerStyle.Alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+//            self.presentViewController(alert, animated: true, completion: nil)
             
             
             }
         } else {
-            let alert = UIAlertController(title: "Alert", message: "URL not mentioned", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Alert", message: "Location addition failed", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }

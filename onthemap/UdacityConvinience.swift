@@ -58,7 +58,7 @@ extension UdacityClient {
                 let appDelegate = object as! AppDelegate
                 
                 appDelegate.firstName = result["account"]!!["firstName"] as? String
-                
+                appDelegate.lastName = result["account"]!!["lastName"] as? String
                 
                 completionHandler(success: true, errorString: nil)
             }
@@ -105,7 +105,8 @@ extension UdacityClient {
     
     func findLocations(completionHandler: (success: Bool,list: AnyObject?, errorString: NSError?) -> Void) {
         
-        let parameters = [String:AnyObject]()
+        var parameters = [String:AnyObject]()
+        parameters["order"] = "-updatedAt"
         
         taskForGETMethod(Methods.StudentLocation, base: "point", parameters: parameters) { (result, error) -> Void in
             if error != nil { // Handle error…

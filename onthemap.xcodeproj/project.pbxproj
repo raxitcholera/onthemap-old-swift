@@ -76,6 +76,7 @@
 			children = (
 				020120161C2A95630091FD9B /* Controller */,
 				020120151C2A955A0091FD9B /* View */,
+				7820B0DB1C98BFBF00756D41 /* FrameWork */,
 				020120141C2A95530091FD9B /* Model */,
 				020120001C2A6B300091FD9B /* AppDelegate.swift */,
 				78EBD0481C96C25800278095 /* GCDBlackBox.swift */,
@@ -116,6 +117,13 @@
 				0216ECE81C32839C00216B93 /* AddStudentLocationViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		7820B0DB1C98BFBF00756D41 /* FrameWork */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = FrameWork;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

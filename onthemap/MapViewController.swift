@@ -12,10 +12,10 @@ import MapKit
 class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
-    
+    /*
     var students: [StudentObject] {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).StudentObj
-    }
+    }*/
     
     override func viewDidLoad() {
     super.viewDidLoad()

@@ -15,11 +15,24 @@ struct StudentObject {
     var URLlink:String?
     var lat:Double?
     var long:Double?
-    init(dict: Dictionary<String, AnyObject>) {
-        self.first_name = dict["first_name"] as? String
-        self.last_name = dict["last_name"] as? String
-        self.lat = dict["lat"] as? Double
-        self.long = dict["long"] as? Double
-        self.URLlink = dict["url"] as? String
+    init(dict:[String:AnyObject]) {
+        self.first_name = dict["firstName"] as? String
+        self.last_name = dict["lastName"] as? String
+        self.lat = dict["latitude"] as? Double
+        self.long = dict["longitude"] as? Double
+        self.URLlink = dict["mediaURL"] as? String
     }
+    
+    static func StudentInfoFromResults(results: [[String:AnyObject]]) -> [StudentObject] {
+        
+        var students = [StudentObject]()
+        
+        // iterate through array of dictionaries, each Student is a dictionary
+        for result in results {
+            students.append(StudentObject(dict: result))
+        }
+        
+        return students
+    }
+    
 }

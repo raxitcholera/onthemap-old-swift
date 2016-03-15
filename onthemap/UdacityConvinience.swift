@@ -25,7 +25,10 @@ extension UdacityClient {
         
         
     }
-    
+    func activityinProgress (active:Bool)
+    {
+        
+    }
     func findSessionId(userName:String!, password:String!,completionHandler: (success: Bool, errorString: NSError?) -> Void) {
         
         let parameters = [String:AnyObject]()
@@ -38,7 +41,7 @@ extension UdacityClient {
             if error != nil { // Handle error…
                 completionHandler(success: false, errorString: error)
             } else {
-            print("The result is \(result)")
+//            print("The result is \(result)")
                 self.sessionID = result["session"]!!["id"] as? String
                 self.userID = result["account"]!!["key"] as? String
                 

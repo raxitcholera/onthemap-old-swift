@@ -89,19 +89,21 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 // point annotations will be stored in this array, and then provided to the map view.
                 var annotations = [MKPointAnnotation]()
                 
-                for dictionary in locations{
+                let studentList = StudentObject.StudentInfoFromResults(locations)
+                
+                for dictionary in studentList{
                     
                     // Notice that the float values are being used to create CLLocationDegree values.
                     // This is a version of the Double type.
-                    let lat = CLLocationDegrees(dictionary["latitude"] as! Double)
-                    let long = CLLocationDegrees(dictionary["longitude"] as! Double)
+                    let lat = CLLocationDegrees(dictionary.lat!)
+                    let long = CLLocationDegrees(dictionary.long!)
                     
                     // The lat and long are used to create a CLLocationCoordinates2D instance.
                     let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
                     
-                    let first = dictionary["firstName"] as! String
-                    let last = dictionary["lastName"] as! String
-                    let mediaURL = dictionary["mediaURL"] as! String
+                    let first = dictionary.first_name!
+                    let last = dictionary.last_name!
+                    let mediaURL = dictionary.URLlink!
                     
                     // Here we create the annotation and set its coordiate, title, and subtitle properties
                     let annotation = MKPointAnnotation()

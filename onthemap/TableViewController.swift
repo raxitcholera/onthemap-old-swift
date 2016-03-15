@@ -31,7 +31,7 @@ class TableViewController:UITableViewController {
                 
             }
             else {
-                let alertController = UIAlertController(title: nil, message: "Student info Loading Failed", preferredStyle: UIAlertControllerStyle.Alert)
+                let alertController = UIAlertController(title: "Student info Loading Failed", message: "Loading HardcodedLocations", preferredStyle: UIAlertControllerStyle.Alert)
                 let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
                 alertController.addAction(defaultAction)
                 self.presentViewController(alertController, animated: true, completion: nil)

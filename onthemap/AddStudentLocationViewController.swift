@@ -84,17 +84,12 @@ class AddStudentLocationViewController: UIViewController,UITextViewDelegate {
 //             print("Location Added Successfully")
 
             if sucess {
-                let alert = UIAlertController(title: "Alert", message: "Location Added Successfully", preferredStyle: UIAlertControllerStyle.Alert)
-//                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
                     performUIUpdatesOnMain({ () -> Void in
                         self.mediaURL.resignFirstResponder()
                         self.dismissThisView()
-                    })
-//
-                }))
-                self.presentViewController(alert, animated: true, completion: nil)
-            }else {
+                })
+                
+                }else {
                 let alert = UIAlertController(title: "Location Not added", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)

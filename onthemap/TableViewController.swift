@@ -11,20 +11,20 @@ import UIKit
 
 class TableViewController:UITableViewController {
     
-    var locations = [[String : AnyObject]]?()
+    var locations = [StudentObject]?()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "List of Students"
         
-        var locations1 = AnyObject!()
+//        var locations1 = AnyObject!()
         
         UdacityClient.sharedInstance().getAllStudentLocations(){ (success, locationsresponse,errorString) in
             if success {
-                locations1 = locationsresponse! as! [String:AnyObject]
-                self.locations = locations1["results"] as? [[String:AnyObject]]
-                
+//                locations1 = locationsresponse! as! [String:AnyObject]
+//                self.locations = locations1["results"] as? [[String:AnyObject]]
+                    self.locations = locationsresponse
                 dispatch_async(dispatch_get_main_queue()) {
                     self.tableView.reloadData()
                 }
@@ -37,7 +37,7 @@ class TableViewController:UITableViewController {
                 self.presentViewController(alertController, animated: true, completion: nil)
 
                 
-                self.locations = self.hardCodedLocationData()
+//                self.locations = self.hardCodedLocationData()
             }
         }
         
@@ -48,9 +48,10 @@ class TableViewController:UITableViewController {
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("studentTableCell")!
+        
         let Student = locations![indexPath.row]
-        let firstname = Student["firstName"] as? String
-        let lastname = Student["lastName"] as? String
+        let firstname = Student.first_name
+        let lastname = Student.last_name
         cell.textLabel?.text = firstname! + " " + lastname!
 //        cell.detailTextLabel?.text = mem["lastName"] as? String
         cell.imageView?.image =  UIImage(named: "pin")
@@ -67,7 +68,7 @@ class TableViewController:UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("selected indes %d", indexPath.row)
         let app = UIApplication.sharedApplication()
-        if let toOpen = locations![indexPath.row]["mediaURL"] as? String {
+        if let toOpen = locations![indexPath.row].URLlink {
             if app.canOpenURL(NSURL(string: toOpen)!){
                 app.openURL(NSURL(string: toOpen)!)
             }

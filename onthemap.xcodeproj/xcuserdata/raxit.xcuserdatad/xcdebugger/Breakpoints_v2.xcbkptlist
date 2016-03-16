@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "onthemap/UdacityConvinience.swift"
-            timestampString = "479771549.924158"
+            timestampString = "479844188.919974"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "findLocations(_:)"
             landmarkType = "5">
          </BreakpointContent>

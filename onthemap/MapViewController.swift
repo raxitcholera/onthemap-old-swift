@@ -78,20 +78,14 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     func loadData() {
         
-        var locations1 = AnyObject!()
         UdacityClient.sharedInstance().getAllStudentLocations(){ (success, locationsresponse,errorString) in
             if success {
-                locations1 = locationsresponse! as! [String:AnyObject]
                 
-                //        let locations = self.hardCodedLocationData()
-                let locations = locations1["results"] as! [[String:AnyObject]]
                 // We will create an MKPointAnnotation for each dictionary in "locations". The
                 // point annotations will be stored in this array, and then provided to the map view.
                 var annotations = [MKPointAnnotation]()
                 
-                let studentList = StudentObject.StudentInfoFromResults(locations)
-                
-                for dictionary in studentList{
+                for dictionary in locationsresponse!{
                     
                     // Notice that the float values are being used to create CLLocationDegree values.
                     // This is a version of the Double type.
@@ -127,7 +121,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
                 alertController.addAction(defaultAction)
                 self.presentViewController(alertController, animated: true, completion: nil)
-                locations1 = self.hardCodedLocationData()
+//                locations1 = self.hardCodedLocationData()
             }
         }
     }

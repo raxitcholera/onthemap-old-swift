@@ -88,11 +88,17 @@ extension UdacityClient {
         
     }
 
-    func getAllStudentLocations(completionHandler: (success: Bool, locations:AnyObject?, errorString: NSError?) -> Void) {
-        
+    func getAllStudentLocations(completionHandler: (success: Bool, locations:[StudentObject]?, errorString: NSError?) -> Void) {
+        var locations1 = AnyObject!()
         self.findLocations() { (success, list, error) in
             if success {
-                completionHandler(success: true, locations: list!, errorString: nil)
+                
+                locations1 = list! as! [String:AnyObject]
+                let locations = locations1["results"] as! [[String:AnyObject]]
+                
+                let studentList = StudentObject.StudentInfoFromResults(locations)
+
+                completionHandler(success: true, locations: studentList, errorString: nil)
             }
             else {
                 completionHandler(success: success,locations: nil, errorString: error)

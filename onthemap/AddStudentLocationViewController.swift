@@ -42,11 +42,13 @@ class AddStudentLocationViewController: UIViewController,UITextViewDelegate {
     }
     
     func SearchForLocation() {        
-        
+        self.activityinProgress(true)
         let localSearchRequest = MKLocalSearchRequest()
         localSearchRequest.naturalLanguageQuery = searchString
         let localSearch = MKLocalSearch(request: localSearchRequest)
         localSearch.startWithCompletionHandler { (localSearchResponse, error) -> Void in
+            
+            self.activityinProgress(false)
             
             if localSearchResponse == nil{
                 let alertController = UIAlertController(title: nil, message: "Place Not Found", preferredStyle: UIAlertControllerStyle.Alert)
@@ -79,13 +81,17 @@ class AddStudentLocationViewController: UIViewController,UITextViewDelegate {
         let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         
         UdacityClient.sharedInstance().setPinFor(appDel.UserId!, first_name:appDel.firstName!, last_name:appDel.lastName!, mapString:searchString!, lat:self.lat!, long:self.long!, url:self.mediaURL.text!) { (sucess,error) in
-             print("Location Added Successfully")
+//             print("Location Added Successfully")
 
             if sucess {
                 let alert = UIAlertController(title: "Alert", message: "Location Added Successfully", preferredStyle: UIAlertControllerStyle.Alert)
 //                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
-                    self.dismissThisView()
+                    performUIUpdatesOnMain({ () -> Void in
+                        self.mediaURL.resignFirstResponder()
+                        self.dismissThisView()
+                    })
+//
                 }))
                 self.presentViewController(alert, animated: true, completion: nil)
             }else {
@@ -113,6 +119,17 @@ class AddStudentLocationViewController: UIViewController,UITextViewDelegate {
             return false
         }
         return true
+    }
+    
+    func activityinProgress (active:Bool)
+    {
+        let activity = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
+        activity.center = self.view.center
+        if active {
+            activity.startAnimating()
+        }else {
+            activity.stopAnimating()
+        }
     }
 
 }

@@ -25,10 +25,7 @@ extension UdacityClient {
         
         
     }
-    func activityinProgress (active:Bool)
-    {
-        
-    }
+    
     func findSessionId(userName:String!, password:String!,completionHandler: (success: Bool, errorString: NSError?) -> Void) {
         
         let parameters = [String:AnyObject]()
@@ -152,6 +149,7 @@ extension UdacityClient {
             }
         }
     }
+    
     
     
 }

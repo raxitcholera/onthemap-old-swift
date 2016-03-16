@@ -123,7 +123,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 
             }
             else {
-                let alertController = UIAlertController(title: "Student info Loading Failed", message: "Loading HardcodedLocations", preferredStyle: UIAlertControllerStyle.Alert)
+                let alertController = UIAlertController(title: "Student info Loading Failed", message: errorString?.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
                 let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
                 alertController.addAction(defaultAction)
                 self.presentViewController(alertController, animated: true, completion: nil)

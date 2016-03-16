@@ -11,7 +11,7 @@ import UIKit
 import MapKit
 
 
-class AddStudentLocationViewController: UIViewController {
+class AddStudentLocationViewController: UIViewController,UITextViewDelegate {
     
     @IBOutlet weak var mediaURL: UITextView!
     
@@ -33,6 +33,7 @@ class AddStudentLocationViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.navigationController?.setToolbarHidden(true, animated: false)
+        mediaURL.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -79,14 +80,23 @@ class AddStudentLocationViewController: UIViewController {
         
         UdacityClient.sharedInstance().setPinFor(appDel.UserId!, first_name:appDel.firstName!, last_name:appDel.lastName!, mapString:searchString!, lat:self.lat!, long:self.long!, url:self.mediaURL.text!) { (sucess,error) in
              print("Location Added Successfully")
-//            let alert = UIAlertController(title: "Alert", message: "Location Added Successfully", preferredStyle: UIAlertControllerStyle.Alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-//            self.presentViewController(alert, animated: true, completion: nil)
-            
+
+            if sucess {
+                let alert = UIAlertController(title: "Alert", message: "Location Added Successfully", preferredStyle: UIAlertControllerStyle.Alert)
+//                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+                    self.dismissThisView()
+                }))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }else {
+                let alert = UIAlertController(title: "Location Not added", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
             
             }
         } else {
-            let alert = UIAlertController(title: "Alert", message: "Location addition failed", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Alert", message: "Please add Url first", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
@@ -96,4 +106,13 @@ class AddStudentLocationViewController: UIViewController {
     @IBAction func dismissThisView() {
         [self.cancelBtn .sendActionsForControlEvents(UIControlEvents.TouchUpInside)]
     }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+
 }

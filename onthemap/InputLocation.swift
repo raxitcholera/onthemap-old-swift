@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class InputLocation:UIViewController {
+class InputLocation:UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var locationTextBox: UITextField!
     
@@ -17,6 +17,7 @@ class InputLocation:UIViewController {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.navigationController?.setToolbarHidden(true, animated: false)
+        locationTextBox.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -47,6 +48,11 @@ class InputLocation:UIViewController {
             
         }
         
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.locationTextBox.resignFirstResponder()
+        return true
     }
     
 }

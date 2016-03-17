@@ -48,7 +48,7 @@ class AddStudentLocationViewController: UIViewController,UITextViewDelegate {
         let localSearch = MKLocalSearch(request: localSearchRequest)
         localSearch.startWithCompletionHandler { (localSearchResponse, error) -> Void in
             
-            self.activityinProgress(false)
+            
             
             if localSearchResponse == nil{
                 let alertController = UIAlertController(title: nil, message: "Place Not Found", preferredStyle: UIAlertControllerStyle.Alert)
@@ -70,6 +70,8 @@ class AddStudentLocationViewController: UIViewController,UITextViewDelegate {
             self.mapView.centerCoordinate = pointAnnotation.coordinate
             self.mapView.setRegion(MKCoordinateRegionMakeWithDistance(pointAnnotation.coordinate, 2000, 2000), animated: true)
             self.mapView.addAnnotation(pinAnnotationView.annotation!)
+            
+            self.activityinProgress(false)
         }
     }
     
@@ -77,17 +79,19 @@ class AddStudentLocationViewController: UIViewController,UITextViewDelegate {
     @IBAction func SubmitBtnClicked(sender: UIButton) {
         
         if mediaURL.text != "" {
+            	mediaURL.resignFirstResponder()
         
         let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
-        
+        activityinProgress(true)
         UdacityClient.sharedInstance().setPinFor(appDel.UserId!, first_name:appDel.firstName!, last_name:appDel.lastName!, mapString:searchString!, lat:self.lat!, long:self.long!, url:self.mediaURL.text!) { (sucess,error) in
 //             print("Location Added Successfully")
 
             if sucess {
-                    performUIUpdatesOnMain({ () -> Void in
-                        self.mediaURL.resignFirstResponder()
-                        self.dismissThisView()
-                })
+
+                NSOperationQueue.mainQueue().addOperationWithBlock {
+                    self.activityinProgress(false)
+                    self.dismissThisView()
+                }
                 
                 }else {
                 let alert = UIAlertController(title: "Location Not added", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
@@ -122,9 +126,12 @@ class AddStudentLocationViewController: UIViewController,UITextViewDelegate {
         activity.center = self.view.center
         if active {
             activity.startAnimating()
-        }else {
+        } else {
             activity.stopAnimating()
+            activity.removeFromSuperview()
         }
+        view.addSubview(activity)
+
     }
 
 }

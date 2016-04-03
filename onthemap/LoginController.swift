@@ -8,24 +8,47 @@
 
 import Foundation
 import UIKit
+import FBSDKLoginKit
 
-class LoginController: UIViewController {
+
+class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBOutlet weak var debugTextLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var fbLoginButton: UIButton!
-    
+    @IBOutlet weak var fbLoginButton: FBSDKLoginButton!
+
     @IBOutlet weak var passwordTextBox: UITextField!
     @IBOutlet weak var userNameTextBox: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.debugTextLabel.text = ""
+        fbLoginButton.delegate = self
+        fbLoginButton.readPermissions = ["public_profile","email"]
         // Do any additional setup after loading the view, typically from a nib.
+        if(FBSDKAccessToken.currentAccessToken() != nil) {
+            completeLogin()
+        }
+        
 
     }
     
-    
-    @IBAction func FaceBookLoginClicked(sender: UIButton) {
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        if(error != nil)
+        {
+            print(error.localizedDescription)
+            return
+        }
+        if let userToken = result.token
+        {
+            let token:FBSDKAccessToken = result.token
+            print("Token received is  \(FBSDKAccessToken.currentAccessToken().tokenString)")
+            print("User Id received is  \(FBSDKAccessToken.currentAccessToken().userID)")
+            completeLogin()
+
+        }
+    }
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        print("Logedout")
     }
     
     @IBAction func LoginBtnClicked(sender: AnyObject) {

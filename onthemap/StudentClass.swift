@@ -34,5 +34,16 @@ struct StudentObject {
         
         return students
     }
+    /*class StudentArray {
+    
+        var myStudentLocations : [StudentObject] = [StudentObject]()
+    
+        class var sharedInstance: StudentObject {
+            struct Singleton {
+                static let instance = StudentArray()
+            }
+            return Singleton.instance
+        }
+    }*/
     
 }

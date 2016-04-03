@@ -8,10 +8,14 @@
 
 import Foundation
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class TableViewController:UITableViewController {
     
     var locations = [StudentObject]?()
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,13 +57,17 @@ class TableViewController:UITableViewController {
     @IBAction func logout(sender: AnyObject) {
         
         print("tried to logout")
+        let controller = self.storyboard!.instantiateViewControllerWithIdentifier("LoginController")
         UdacityClient.sharedInstance().performLogout { (success, errorString) -> Void in
-            
-            let controller = self.storyboard!.instantiateViewControllerWithIdentifier("LoginController")
-            
             if success {
                 UIApplication.sharedApplication().keyWindow?.rootViewController = controller
             }
+        }
+        if(FBSDKAccessToken.currentAccessToken() != nil)
+        {
+            let fbLoginManager = FBSDKLoginManager()
+            fbLoginManager.logOut()
+            UIApplication.sharedApplication().keyWindow?.rootViewController = controller
         }
         
     }

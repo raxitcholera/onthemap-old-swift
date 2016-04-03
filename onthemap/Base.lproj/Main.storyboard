@@ -159,7 +159,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gcv-aO-pEF">
-                                <rect key="frame" x="20" y="295" width="560" height="297"/>
+                                <rect key="frame" x="20" y="295" width="560" height="300"/>
                             </mapView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bTm-Sp-ILf">
                                 <rect key="frame" x="20" y="84" width="560" height="193"/>
@@ -221,6 +221,7 @@
                             <constraint firstItem="bTm-Sp-ILf" firstAttribute="top" secondItem="BZt-mD-epe" secondAttribute="bottom" constant="18" id="xr4-uC-MPL"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="1bK-Yv-32L"/>
                     <connections>
                         <outlet property="cancelBtn" destination="U6N-GC-iYd" id="kp1-el-l1W"/>
                         <outlet property="mapView" destination="gcv-aO-pEF" id="WjU-Wx-bUg"/>
@@ -303,17 +304,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruQ-Q1-Kdy">
-                                <rect key="frame" x="45" y="519" width="510" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                <state key="normal" title="LoginWithFacebook">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="FaceBookLoginClicked:" destination="mgO-5c-4IC" eventType="touchUpInside" id="oya-Ya-aqo"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="2IU-7Q-nbv">
                                 <rect key="frame" x="229" y="12" width="143" height="76"/>
                                 <constraints>
@@ -330,8 +320,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjr-MN-6EI">
-                                <rect key="frame" x="45" y="216" width="510" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjr-MN-6EI">
+                                <rect key="frame" x="45" y="216" width="510" height="36"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <state key="normal" title="Login">
@@ -341,21 +331,25 @@
                                     <action selector="LoginBtnClicked:" destination="mgO-5c-4IC" eventType="touchUpInside" id="bSo-Rb-P0g"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R0O-eV-IOs" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="45" y="544" width="510" height="36"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="pSD-5b-6A2" firstAttribute="leading" secondItem="52i-e8-Dyq" secondAttribute="leadingMargin" id="4eZ-Q4-gmc"/>
                             <constraint firstItem="Zj4-1P-s5a" firstAttribute="trailing" secondItem="52i-e8-Dyq" secondAttribute="trailingMargin" id="B2L-wq-5MX"/>
-                            <constraint firstItem="ruQ-Q1-Kdy" firstAttribute="leading" secondItem="52i-e8-Dyq" secondAttribute="leadingMargin" constant="25" id="EWr-gv-WpJ"/>
                             <constraint firstItem="Zj4-1P-s5a" firstAttribute="leading" secondItem="52i-e8-Dyq" secondAttribute="leadingMargin" id="FyI-vv-e2X"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="R0O-eV-IOs" secondAttribute="trailing" constant="25" id="G9d-5r-hKH"/>
                             <constraint firstItem="Zj4-1P-s5a" firstAttribute="top" secondItem="2IU-7Q-nbv" secondAttribute="bottom" constant="8" id="Hhz-MX-g7g"/>
                             <constraint firstItem="2IU-7Q-nbv" firstAttribute="top" secondItem="52i-e8-Dyq" secondAttribute="topMargin" constant="12" id="I9L-KV-rTW"/>
-                            <constraint firstItem="Wdd-UQ-sTo" firstAttribute="top" secondItem="ruQ-Q1-Kdy" secondAttribute="bottom" constant="51" id="KMC-sn-1nd"/>
                             <constraint firstItem="Fdi-Bo-s8X" firstAttribute="centerX" secondItem="52i-e8-Dyq" secondAttribute="centerX" id="Ldv-os-Dtw"/>
                             <constraint firstItem="2IU-7Q-nbv" firstAttribute="centerX" secondItem="52i-e8-Dyq" secondAttribute="centerX" id="MG6-sK-djq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ruQ-Q1-Kdy" secondAttribute="trailing" constant="25" id="QTL-XS-JWD"/>
                             <constraint firstItem="pSD-5b-6A2" firstAttribute="top" secondItem="Zj4-1P-s5a" secondAttribute="bottom" constant="22" id="QtE-ph-OeD"/>
+                            <constraint firstItem="Wdd-UQ-sTo" firstAttribute="top" secondItem="R0O-eV-IOs" secondAttribute="bottom" constant="20" id="R4w-Xp-rQM"/>
                             <constraint firstItem="kjr-MN-6EI" firstAttribute="top" secondItem="pSD-5b-6A2" secondAttribute="bottom" constant="38" id="UZg-z7-ub0"/>
+                            <constraint firstItem="R0O-eV-IOs" firstAttribute="leading" secondItem="52i-e8-Dyq" secondAttribute="leadingMargin" constant="25" id="VOz-oh-37k"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kjr-MN-6EI" secondAttribute="trailing" constant="25" id="XNr-oI-XRq"/>
                             <constraint firstItem="Fdi-Bo-s8X" firstAttribute="top" secondItem="kjr-MN-6EI" secondAttribute="bottom" constant="76" id="m8d-7q-PLb"/>
                             <constraint firstItem="kjr-MN-6EI" firstAttribute="leading" secondItem="52i-e8-Dyq" secondAttribute="leadingMargin" constant="25" id="rqU-IZ-Gzv"/>
@@ -364,7 +358,7 @@
                     </view>
                     <connections>
                         <outlet property="debugTextLabel" destination="Fdi-Bo-s8X" id="MdR-bw-tMi"/>
-                        <outlet property="fbLoginButton" destination="ruQ-Q1-Kdy" id="nJn-Gv-hC8"/>
+                        <outlet property="fbLoginButton" destination="R0O-eV-IOs" id="q3z-1s-aoI"/>
                         <outlet property="loginButton" destination="kjr-MN-6EI" id="nQR-Kq-brC"/>
                         <outlet property="passwordTextBox" destination="pSD-5b-6A2" id="ziS-ue-Fgp"/>
                         <outlet property="userNameTextBox" destination="Zj4-1P-s5a" id="nyh-G6-cfd"/>
